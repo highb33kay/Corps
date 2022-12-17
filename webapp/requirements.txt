@@ -1,0 +1,7 @@
+Django
+django-allauth
+django-anymail
+django-bootstrap4
+Pillow
+django-thumbs-v2
+git+https://github.com/rrmerugu/placeholder-pics
