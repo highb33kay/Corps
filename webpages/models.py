@@ -1,15 +1,27 @@
 from django.db import models
+from django_countries.fields import CountryField
 
 # Create your models here.
 class CompanyProfile(models.Model):
 
     # African countries choices
-    countries = (
-        ("Alg", "Algeria"),
-        ("Ang", "Angola"),
-        ("Ben", "Benin"),
-        ("Bot", "Botswana"),
-    )
+    # countries = (
+    #     ("Alg", "Algeria"),
+    #     ("Ang", "Angola"),
+    #     ("Ben", "Benin"),
+    #     ("Bot", "Botswana"),
+    #     ("Bur", "Burkina Faso"),
+    #     ("Burundi", "Burundi"),
+    #     ("Cam", "Cameroon"),
+    #     ("Cape Verde", "Cape Verde"),
+    #     ("Cen African Rep", "Central African Republic"),
+    #     ("Chad", "Chad"),
+    #     ("Com", "Comoros"),
+    #     ("Con", "Congo"),
+    #     ("Djibouti", "Djibouti"),
+    #     ("Egypt", "Egypt"),
+    #     ()
+    # )
 
     status = (
         ("Pending", "Pending"),
@@ -26,7 +38,7 @@ class CompanyProfile(models.Model):
     Phone_Number = models.IntegerField(max_length=255)
 
     # country choices field
-    Country = models.CharField(max_length=3, choices=countries)
+    Country = CountryField(blank_label="(select country)")
     Organization_Registration_No = models.IntegerField()
     CAC_No = models.CharField(max_length=255)
     Proposal_Status = models.CharField(

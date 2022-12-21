@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "user_registration_bs4",
+    "django_countries",
     "bootstrap4",
     "django_thumbs",
     "anymail",
