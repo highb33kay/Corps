@@ -28,14 +28,13 @@
             </div>
 
         </div> -->
-        <div class="row">
-            <div class="col col-12 pb-5">
+        <div class="">
+            <div class="col col-12">
                 <div class="clearfix"></div>
                 {% comment %} <img src="{% static 'webpages/images/tn.png' %}" alt="TransNational Grant Community Board Company" style="width: 100px; height: 100px;"> {% endcomment %}
                 <h1 class=" " style="margin-top: 15rem;">TransNational Grant Community Board Company</h1>
                 <p>In Order to qualify for the Grant You need to <strong>Register</strong> Your Company</p>
-                <p>Get Started</p>
-                <button><a href="{% url 'company-create' %}">Register</a></button>
+                <a href="{% url 'company-create' %}" style="color: white;"><button class="btn btn-primary btn-block">Get Started</button></a>
             </div>
 
         </div>

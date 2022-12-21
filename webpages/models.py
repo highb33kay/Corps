@@ -27,8 +27,8 @@ class CompanyProfile(models.Model):
 
     # country choices field
     Country = models.CharField(max_length=3, choices=countries)
-    Organization_Registration_No = models.IntegerField(max_length=255)
-    CAC_No = models.IntegerField(max_length=255)
+    Organization_Registration_No = models.IntegerField()
+    CAC_No = models.IntegerField()
     Proposal_Status = models.CharField(max_length=255, choices=status)
 
     # Bank Status
