@@ -11,27 +11,32 @@ class CompanyProfile(models.Model):
         ("Bot", "Botswana"),
     )
 
-    name = models.CharField(max_length=255)
-    address = models.CharField(max_length=255)
-    name_of_organization = models.CharField(max_length=255)
-    number_of_employees = models.IntegerField()
-    director_1 = models.CharField(max_length=255)
-    director_2 = models.CharField(max_length=255)
-    director_3 = models.CharField(max_length=255)
-    phone_number = models.IntegerField(max_length=255)
+    status = (
+        ("Pending", "Pending"),
+        ("Completed", "Completed"),
+    )
+
+    Name = models.CharField(max_length=255, unique=True)
+    Address = models.CharField(max_length=255)
+    Name_of_Organization = models.CharField(max_length=255, unique=True)
+    Number_of_Employees = models.IntegerField()
+    First_Director = models.CharField(max_length=255)
+    Second_Director = models.CharField(max_length=255)
+    Third_Director = models.CharField(max_length=255)
+    Phone_Number = models.IntegerField(max_length=255)
 
     # country choices field
-    country = models.CharField(max_length=3, choices=countries)
-    organization_reg_no = models.IntegerField(max_length=255)
-    cac_no = models.IntegerField(max_length=255)
-    proposal_status = models.BooleanField(default=False, blank=False)
+    Country = models.CharField(max_length=3, choices=countries)
+    Organization_Registration_No = models.IntegerField(max_length=255)
+    CAC_No = models.IntegerField(max_length=255)
+    Proposal_Status = models.CharField(max_length=255, choices=status)
 
     # Bank Status
-    correspondence_status = models.BooleanField(default=False, blank=False)
-    receiver_status = models.BooleanField(default=False, blank=False)
+    Correspondence_Status = models.CharField(max_length=255, choices=status)
+    Receiver_Status = models.CharField(max_length=255, choices=status)
 
     # clearance status
-    clearance_status = models.BooleanField(default=False, blank=False)
+    Clearance_Status = models.CharField(max_length=255, choices=status)
 
     def __str__(self):
         return self.name
