@@ -6,4 +6,5 @@ urlpatterns = [
     # handle the user search form
     path("user_search", views.user_search_view, name="user_search"),
     path("/terms", views.TermsView.as_view(), name="terms"),
+    path("company/add/", views.company_create, name="company-create"),
 ]
