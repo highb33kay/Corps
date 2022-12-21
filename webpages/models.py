@@ -28,15 +28,23 @@ class CompanyProfile(models.Model):
     # country choices field
     Country = models.CharField(max_length=3, choices=countries)
     Organization_Registration_No = models.IntegerField()
-    CAC_No = models.IntegerField()
-    Proposal_Status = models.CharField(max_length=255, choices=status)
+    CAC_No = models.CharField(max_length=255)
+    Proposal_Status = models.CharField(
+        max_length=255, choices=status, default="Pending"
+    )
 
     # Bank Status
-    Correspondence_Status = models.CharField(max_length=255, choices=status)
-    Receiver_Status = models.CharField(max_length=255, choices=status)
+    Correspondence_Status = models.CharField(
+        max_length=255, choices=status, default="Pending"
+    )
+    Receiver_Status = models.CharField(
+        max_length=255, choices=status, default="Pending"
+    )
 
     # clearance status
-    Clearance_Status = models.CharField(max_length=255, choices=status)
+    Clearance_Status = models.CharField(
+        max_length=255, choices=status, default="Pending"
+    )
 
     def __str__(self):
         return self.name
